@@ -9,16 +9,17 @@ GAME RULES:
 
 What you will learn in this lecture:
 
-- How to use functions to correctly apply the DRY principle
-- How to think about the game logic like a programmer
+- What a state variable is, how to use it and why
 
 */
 
-var scores, roundScore, activePlayer, dice;
+var scores, roundScore, activePlayer, gamePlaying;
 
 init();
 
 document.querySelector(".btn-roll").addEventListener("click", function() {
+  if (!gamePlaying) return;
+
   // 1. Random number
   var dice = Math.floor(Math.random() * 6) + 1;
 
@@ -39,6 +40,8 @@ document.querySelector(".btn-roll").addEventListener("click", function() {
 });
 
 document.querySelector(".btn-hold").addEventListener("click", function() {
+  if (!gamePlaying) return;
+
   // Add CURRENT score to GLOBAL score
   scores[activePlayer] += roundScore;
 
@@ -57,6 +60,8 @@ document.querySelector(".btn-hold").addEventListener("click", function() {
     document
       .querySelector(".player-" + activePlayer + "-panel")
       .classList.remove("active");
+
+    gamePlaying = false;
   } else {
     // Next player
     nextPlayer();
@@ -82,6 +87,7 @@ function init() {
   scores = [0, 0];
   roundScore = 0;
   activePlayer = 0;
+  gamePlaying = true;
 
   document.querySelector(".dice").style.display = "none";
   document.getElementById("score-0").textContent = "0";
@@ -96,7 +102,3 @@ function init() {
   document.querySelector(".player-1-panel").classList.remove("active");
   document.querySelector(".player-0-panel").classList.add("active");
 }
-
-// document.querySelector("#current-" + activePlayer).textContent = dice;
-// document.querySelector("#current-" + activePlayer).innerHTML =
-//   "<em>" + dice + "</em>";
