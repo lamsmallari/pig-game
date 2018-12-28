@@ -18,18 +18,27 @@
   </head>
 
   <body>
-    <div class="game-options">
+    <div class="header">
+      <nav>
+        <h1 class="title">🐷 Pig Game</h1>
+        <ul>
+          <li><a href="#" id="new-game">New Game</a></li>
+          <li><a href="#" id="how-to-play">How To Play</a></li>
+        </ul>
+      </nav>
+
       <div class="form-group">
-        <label for="winning-score">Set winning score: </label>
-        <input type="text" id="winning-score" value="50" />
+        <label for="winning-score">Winning Score: </label>
+        <input type="number" id="winning-score" value="100" placeholder="100" />
       </div>
     </div>
+    <!-- <div class="game-options"></div> -->
     <div class="wrapper clearfix">
       <div class="player-0-panel active">
         <div class="player-name" id="name-0">Player 1</div>
         <div class="player-score" id="score-0">43</div>
         <div class="player-current-box">
-          <div class="player-current-label">Current</div>
+          <div class="player-current-label">Round Score</div>
           <div class="player-current-score" id="current-0">11</div>
         </div>
       </div>
@@ -38,22 +47,109 @@
         <div class="player-name" id="name-1">Player 2</div>
         <div class="player-score" id="score-1">72</div>
         <div class="player-current-box">
-          <div class="player-current-label">Current</div>
+          <div class="player-current-label">Round Score</div>
           <div class="player-current-score" id="current-1">0</div>
         </div>
       </div>
 
-      <button class="btn-new">
-        <i class="ion-ios-plus-outline"></i>New game
-      </button>
       <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
       <button class="btn-hold">
         <i class="ion-ios-download-outline"></i>Hold
       </button>
 
-      <img src="dice-5.png" alt="Dice" class="dice" />
+      <div class="dices-container">
+        <svg
+          class="dice-1"
+          data-value="1"
+          width="100px"
+          height="100px"
+          cversion="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g class="d1 dicedots">
+            <circle class="mono" cx="50%" cy="50%" r="12" fill="red" />
+            <!-- <circle class="mono" cx="50%" cy="50%" r="7" /> -->
+          </g>
+          <g class="d2 dicedots">
+            <circle class="mono" cx="80%" cy="20%" r="7" />
+            <circle class="mono" cx="20%" cy="80%" r="7" />
+          </g>
+          <g class="d3 dicedots">
+            <circle class="mono" cx="80%" cy="20%" r="7" />
+            <circle class="mono" cx="50%" cy="50%" r="7" />
+            <circle class="mono" cx="20%" cy="80%" r="7" />
+          </g>
+          <g class="d4 dicedots">
+            <circle class="mono" cx="20%" cy="20%" r="7" />
+            <circle class="mono" cx="80%" cy="20%" r="7" />
+            <circle class="mono" cx="20%" cy="80%" r="7" />
+            <circle class="mono" cx="80%" cy="80%" r="7" />
+          </g>
+          <g class="d5 dicedots">
+            <circle class="mono" cx="20%" cy="20%" r="7" />
+            <circle class="mono" cx="80%" cy="20%" r="7" />
+            <circle class="mono" cx="20%" cy="80%" r="7" />
+            <circle class="mono" cx="80%" cy="80%" r="7" />
+            <circle class="mono" cx="50%" cy="50%" r="7" />
+          </g>
+          <g class="d6 dicedots">
+            <circle class="mono" cx="20%" cy="20%" r="7" />
+            <circle class="mono" cx="80%" cy="20%" r="7" />
+            <circle class="mono" cx="20%" cy="80%" r="7" />
+            <circle class="mono" cx="80%" cy="80%" r="7" />
+            <circle class="mono" cx="20%" cy="50%" r="7" />
+            <circle class="mono" cx="80%" cy="50%" r="7" />
+          </g>
+        </svg>
+
+        <svg
+          class="dice-2"
+          data-value="1"
+          width="100px"
+          height="100px"
+          cversion="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g class="d1 dicedots">
+            <circle class="mono" cx="50%" cy="50%" r="12" fill="red" />
+          </g>
+          <g class="d2 dicedots">
+            <circle class="mono" cx="80%" cy="20%" r="7" />
+            <circle class="mono" cx="20%" cy="80%" r="7" />
+          </g>
+          <g class="d3 dicedots">
+            <circle class="mono" cx="80%" cy="20%" r="7" />
+            <circle class="mono" cx="50%" cy="50%" r="7" />
+            <circle class="mono" cx="20%" cy="80%" r="7" />
+          </g>
+          <g class="d4 dicedots">
+            <circle class="mono" cx="20%" cy="20%" r="7" />
+            <circle class="mono" cx="80%" cy="20%" r="7" />
+            <circle class="mono" cx="20%" cy="80%" r="7" />
+            <circle class="mono" cx="80%" cy="80%" r="7" />
+          </g>
+          <g class="d5 dicedots">
+            <circle class="mono" cx="20%" cy="20%" r="7" />
+            <circle class="mono" cx="80%" cy="20%" r="7" />
+            <circle class="mono" cx="20%" cy="80%" r="7" />
+            <circle class="mono" cx="80%" cy="80%" r="7" />
+            <circle class="mono" cx="50%" cy="50%" r="7" />
+          </g>
+          <g class="d6 dicedots">
+            <circle class="mono" cx="20%" cy="20%" r="7" />
+            <circle class="mono" cx="80%" cy="20%" r="7" />
+            <circle class="mono" cx="20%" cy="80%" r="7" />
+            <circle class="mono" cx="80%" cy="80%" r="7" />
+            <circle class="mono" cx="20%" cy="50%" r="7" />
+            <circle class="mono" cx="80%" cy="50%" r="7" />
+          </g>
+        </svg>
+
+        <!-- <img src="dice-5.png" alt="Dice 2" class="dice-2" /> -->
+      </div>
     </div>
 
+    <script src="countUp.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
