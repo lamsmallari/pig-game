@@ -7,16 +7,13 @@ GAME RULES:
 - The player can choose to 'Hold', which means that his ROUND score gets added to his GLBAL score. After that, it's the next player's turn
 - The first player to reach 100 points on GLOBAL score wins the game
 
-What you will learn in this lecture:
-
-- What a state variable is, how to use it and why
-
 */
 
 var scores, roundScore, activePlayer, gamePlaying;
-var previousDice = 0;
+var lastDice = 0;
 var winningScore = 50;
 var rollDice = new Audio("dice.mp3");
+var fail = new Audio("fail.wav");
 var win = new Audio("win.wav");
 
 init();
@@ -30,10 +27,9 @@ document.querySelector(".btn-roll").addEventListener("click", function() {
   if (!gamePlaying) return;
 
   // 1. Random number
-  rollDice.play();
   var dice = Math.floor(Math.random() * 6) + 1;
   // var dice = 6;
-  console.log("player: " + (activePlayer + 1) + " - " + dice);
+  console.log("player: " + (activePlayer + 1) + " - rolls: " + dice);
 
   // 2. Display the result
   var diceDOM = document.querySelector(".dice");
@@ -41,34 +37,21 @@ document.querySelector(".btn-roll").addEventListener("click", function() {
   diceDOM.src = "dice-" + dice + ".png";
 
   // 3. Update the round score IF the rolled number was NOT a 1
-  if (dice !== 1) {
-    if (dice === 6) {
-      previousDice++;
-      if (previousDice === 2) {
-        scores[activePlayer] = 0;
-
-        // Update the main score UI
-        document.querySelector("#score-" + activePlayer).textContent =
-          scores[activePlayer];
-
-        console.log(
-          "reset! " + scores[activePlayer] + " " + (activePlayer + 1)
-        );
-
-        previousDice = 0;
-
-        nextPlayer();
-        return;
-      }
-    } else {
-      previousDice = 0;
-    }
-
+  if (dice === 6 && lastDice === 6) {
+    lastDice = 0;
+    fail.play();
+    scores[activePlayer] = 0;
+    document.querySelector("#score-" + activePlayer).textContent = "0";
+    nextPlayer();
+  } else if (dice !== 1) {
     // Add score
+    rollDice.play();
     roundScore += dice;
     document.querySelector("#current-" + activePlayer).textContent = roundScore;
+    lastDice = dice;
   } else {
     // Next player
+    fail.play();
     nextPlayer();
   }
 });
@@ -76,7 +59,7 @@ document.querySelector(".btn-roll").addEventListener("click", function() {
 document.querySelector(".btn-hold").addEventListener("click", function() {
   if (!gamePlaying) return;
 
-  previousDice = 0;
+  lastDice = 0;
 
   // Add CURRENT score to GLOBAL score
   scores[activePlayer] += roundScore;
