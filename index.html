@@ -23,18 +23,21 @@
         <h1 class="title">🐷 Pig Game</h1>
         <ul>
           <li><a href="#" id="new-game">New Game</a></li>
-          <li><a href="#" id="how-to-play">How To Play</a></li>
+          <li><a href="#how-to-play">How To Play</a></li>
         </ul>
       </nav>
 
       <div class="form-group">
-        <label for="winning-score">Winning Score: </label>
+        <label for="winning-score">Set Winning Score: </label>
         <input type="number" id="winning-score" value="100" placeholder="100" />
       </div>
     </div>
     <!-- <div class="game-options"></div> -->
     <div class="wrapper clearfix">
       <div class="player-0-panel active">
+        <div class="dice-turn">
+          <span class="dice-emote">🎲</span> <span class="dice-shadow"></span>
+        </div>
         <div class="player-name" id="name-0">Player 1</div>
         <div class="player-score" id="score-0">43</div>
         <div class="player-current-box">
@@ -44,6 +47,9 @@
       </div>
 
       <div class="player-1-panel">
+        <div class="dice-turn">
+          <span class="dice-emote">🎲</span> <span class="dice-shadow"></span>
+        </div>
         <div class="player-name" id="name-1">Player 2</div>
         <div class="player-score" id="score-1">72</div>
         <div class="player-current-box">
@@ -59,7 +65,7 @@
 
       <div class="dices-container">
         <svg
-          class="dice-1"
+          class="dice dice-1"
           data-value="1"
           width="100px"
           height="100px"
@@ -103,7 +109,7 @@
         </svg>
 
         <svg
-          class="dice-2"
+          class="dice dice-2"
           data-value="1"
           width="100px"
           height="100px"
@@ -148,6 +154,32 @@
         <!-- <img src="dice-5.png" alt="Dice 2" class="dice-2" /> -->
       </div>
     </div>
+
+    <a href="#_" class="lightbox-how-to-play" id="how-to-play">
+      <div class="lightbox-desc">
+        <h2>Game Rules</h2>
+        <ul>
+          <li>The game has 2 players, playing in rounds.</li>
+          <li>
+            In each turn, a player rolls a dice as many times as he whishes.
+            Each result get added to his ROUND score.
+          </li>
+          <li>
+            BUT, if the player rolls a 1, all his ROUND score gets lost. After
+            that, it's the next player's turn.
+          </li>
+          <li>
+            The player can choose to 'Hold', which means that his ROUND score
+            gets added to his MAIN score. After that, it's the next player's
+            turn.
+          </li>
+          <li>
+            The first player to reach "Winning Score (set by default to 100)"
+            points on MAIN score wins the game.
+          </li>
+        </ul>
+      </div>
+    </a>
 
     <script src="countUp.min.js"></script>
     <script src="app.js"></script>
