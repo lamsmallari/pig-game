@@ -13,6 +13,7 @@
       type="text/css"
     />
     <link type="text/css" rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
 
     <title>Pig Game</title>
   </head>
@@ -29,10 +30,17 @@
 
       <div class="form-group">
         <label for="winning-score">Set Winning Score: </label>
-        <input type="number" id="winning-score" value="100" placeholder="100" />
+        <input
+          type="number"
+          id="winning-score"
+          value="100"
+          placeholder="100"
+          pattern="/^-?\d+\.?\d*$/"
+          onKeyPress="if(this.value.length==3) return false;"
+        />
       </div>
     </div>
-    <!-- <div class="game-options"></div> -->
+
     <div class="wrapper clearfix">
       <div class="player-0-panel active">
         <div class="dice-turn">
@@ -153,6 +161,23 @@
 
         <!-- <img src="dice-5.png" alt="Dice 2" class="dice-2" /> -->
       </div>
+
+      <div class="new-game-win">
+        <div class="rect rect-1"></div>
+        <div class="rect rect-2"></div>
+        <span>New Game</span>
+      </div>
+    </div>
+
+    <div id="keybindings">
+      <p>
+        <span class="key-set"
+          ><span class="key-command">space bar</span> : ROLL DICE</span
+        >
+        <span class="key-set"
+          ><span class="key-command">CTRL</span> : HOLD</span
+        >
+      </p>
     </div>
 
     <a href="#_" class="lightbox-how-to-play" id="how-to-play">
@@ -181,7 +206,7 @@
       </div>
     </a>
 
-    <script src="countUp.min.js"></script>
-    <script src="app.js"></script>
+    <script src="js/countUp.min.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>

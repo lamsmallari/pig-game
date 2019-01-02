@@ -1,3 +1,3 @@
 # Pig Game
 
-A vanilla JavaScript app
+A vanilla JavaScript game app
