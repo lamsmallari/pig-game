@@ -731,7 +731,7 @@ i {
   .dices-container {
     top: 92px;
     left: 100%;
-    transform: translateX(-80%) scale(0.6);
+    transform: translateX(-65%) scale(0.5);
     width: auto;
   }
 
