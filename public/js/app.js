@@ -135,8 +135,13 @@ function rollDice() {
     previousRoundScore = roundScore;
 
     document.querySelector(".btn-roll").setAttribute("disabled", "disabled");
+    document.querySelector(".btn-hold").setAttribute("disabled", "disabled");
+
     setTimeout(function() {
       document.querySelector(".btn-roll").removeAttribute("disabled");
+      document
+        .querySelector(".btn-hold")
+        .removeAttribute("disabled", "disabled");
     }, 800);
 
     console.log("rolled: " + (diceRoll1 + diceRoll2));
@@ -147,10 +152,15 @@ function rollDice() {
     sfxFail.play();
 
     document.querySelector(".btn-roll").setAttribute("disabled", "disabled");
+    document.querySelector(".btn-hold").setAttribute("disabled", "disabled");
     setTimeout(function() {
       document.querySelector(".dices-container").style.opacity = "0";
       document.querySelector(".btn-roll").removeAttribute("disabled");
+      document
+        .querySelector(".btn-hold")
+        .removeAttribute("disabled", "disabled");
     }, 800);
+
     nextPlayer();
   }
 }
