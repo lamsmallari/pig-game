@@ -93,6 +93,10 @@ nav ul li a {
   text-decoration: none;
 }
 
+nav ul li a .menuicon {
+  display: none;
+}
+
 input {
   font-family: Lato;
 }
@@ -564,6 +568,7 @@ i {
   margin-top: 100px;
   width: 55%;
   max-width: 1055px;
+  min-width: 320px;
 }
 
 .lightbox-how-to-play .lightbox-desc ul {
@@ -579,4 +584,165 @@ i {
 
 .lightbox-how-to-play:target {
   display: flex;
+}
+
+/**********************************************
+*** RESPONSIVE
+**********************************************/
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 25px 0 18px;
+  }
+
+  .header .title {
+    font-size: 1.4em;
+    margin-bottom: 14px;
+  }
+
+  .header nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  nav ul {
+    margin-left: 0;
+    margin-bottom: 18px;
+  }
+
+  nav ul li:not(:last-child) {
+    margin-right: 0;
+  }
+
+  nav ul li a .maintext {
+    display: none;
+    margin: 0;
+  }
+
+  nav ul li a .menuicon {
+    display: block;
+  }
+
+  .form-group {
+    margin-top: 15px;
+  }
+
+  .wrapper {
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: inherit;
+    padding-bottom: 10px;
+  }
+
+  .player-0-panel,
+  .player-1-panel {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+    float: none;
+    height: auto;
+    padding: 30px 30px 25px;
+    width: 100%;
+  }
+
+  .active {
+    background-color: #fffbf3;
+  }
+
+  .player-0-panel {
+    margin-bottom: 85px;
+  }
+
+  .dice-turn {
+    width: auto;
+    left: 15px;
+    top: 25px;
+  }
+
+  .player-name {
+    font-size: 30px;
+    margin-top: 0;
+  }
+
+  .player-score {
+    font-size: 50px;
+    margin-bottom: 11px;
+  }
+
+  .player-current-box {
+    background-color: transparent;
+    box-shadow: none;
+    width: auto;
+    min-width: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .player-current-label {
+    background-color: #23a5dc;
+    font-size: 13px;
+    padding: 7px 8px;
+    font-weight: 500;
+  }
+
+  .player-current-score {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 3px 15px;
+    background: #fff;
+    border: 1px solid #23a5dc;
+  }
+
+  .main-commands {
+    padding-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+
+  button {
+    background-color: #e4a320;
+    position: relative;
+    transform: none;
+    left: 0;
+  }
+
+  .btn-roll,
+  .btn-hold {
+    top: 0;
+  }
+
+  .winner .player-name:after {
+    left: 8px;
+    top: -6px;
+  }
+
+  .dices-container {
+    top: 182px;
+    display: flex;
+    transform: translateX(-50%) scale(0.6);
+    width: auto;
+  }
+
+  .dices-container .dice {
+    margin: 10px 30px;
+  }
+
+  .new-game-win {
+    top: 215px;
+  }
+
+  #keybindings {
+    display: none;
+  }
+
+  .lightbox-how-to-play .lightbox-desc {
+    font-size: 0.9em;
+    padding: 28px;
+  }
 }

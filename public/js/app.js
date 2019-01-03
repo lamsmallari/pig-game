@@ -195,7 +195,7 @@ function playerHold() {
     document.querySelector(".new-game-win").style.display = "block";
 
     setTimeout(function() {
-      document.querySelector(".new-game-win").style.top = "160px";
+      document.querySelector(".new-game-win").style.top = "201px";
     }, 100);
 
     gamePlaying = false;
