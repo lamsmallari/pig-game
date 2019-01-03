@@ -623,6 +623,7 @@ i {
 
   nav ul li a .menuicon {
     display: block;
+    margin: 0;
   }
 
   .form-group {
@@ -653,7 +654,7 @@ i {
   }
 
   .player-0-panel {
-    margin-bottom: 85px;
+    margin-bottom: 15px;
   }
 
   .dice-turn {
@@ -710,6 +711,12 @@ i {
     position: relative;
     transform: none;
     left: 0;
+    width: 140px;
+  }
+
+  button i {
+    margin-right: 0;
+    width: 33px;
   }
 
   .btn-roll,
@@ -723,9 +730,9 @@ i {
   }
 
   .dices-container {
-    top: 182px;
-    display: flex;
-    transform: translateX(-50%) scale(0.6);
+    top: 92px;
+    left: 100%;
+    transform: translateX(-80%) scale(0.6);
     width: auto;
   }
 
