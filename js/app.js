@@ -34,7 +34,7 @@ window.addEventListener("keydown", function(e) {
     document.querySelector(".btn-roll").click();
   }
   // go to the left
-  if (e.keyCode == 17) {
+  if (e.keyCode == 72) {
     document.querySelector(".btn-hold").click();
   }
 });
