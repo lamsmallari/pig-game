@@ -731,7 +731,7 @@ i {
   .dices-container {
     top: 92px;
     left: 100%;
-    transform: translateX(-65%) scale(0.5);
+    transform: translateX(-80%) scale(0.6);
     width: auto;
   }
 
@@ -751,5 +751,11 @@ i {
     font-size: 0.9em;
     margin-top: 70px;
     padding: 28px;
+  }
+}
+
+@media (max-width: 425px) {
+  .dices-container {
+    transform: translateX(-65%) scale(0.5);
   }
 }
