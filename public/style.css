@@ -627,7 +627,7 @@ i {
   }
 
   .form-group {
-    margin-top: 15px;
+    margin-top: 5px;
   }
 
   .wrapper {
@@ -750,6 +750,7 @@ i {
 
   .lightbox-how-to-play .lightbox-desc {
     font-size: 0.9em;
+    margin-top: 70px;
     padding: 28px;
   }
 }
