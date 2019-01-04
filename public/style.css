@@ -262,7 +262,6 @@ input {
 .player-score {
   text-align: center;
   font-size: 80px;
-  /* font-weight: 100; */
   color: #589e12;
   margin-bottom: 100px;
 }
@@ -290,9 +289,7 @@ input {
   min-width: 110px;
   margin: 0 auto;
   text-align: center;
-  /* box-shadow: 4px 5px 0px 1px rgba(0, 0, 0, 0.1); */
   box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.1);
-  /* border-radius: 4px; */
   overflow: hidden;
 }
 
@@ -328,6 +325,7 @@ button {
   cursor: pointer;
   font-weight: 300;
   -webkit-transition: all 0.3s;
+  -webkit-transition: all 0.2s;
   transition: all 0.2s;
   box-shadow: 4px 5px 0px 1px rgba(0, 0, 0, 0.1);
 }
@@ -353,7 +351,6 @@ i {
   font-size: 24px;
   line-height: 1;
   vertical-align: sub;
-  /* background: #fff; */
   height: 34px;
   width: 43px;
   text-align: center;
@@ -453,47 +450,47 @@ i {
   top: 120px;
   -webkit-transform: translateX(-50%) scale(1);
   transform: translateX(-50%) scale(1);
+  -webkit-transition: all 0.25s ease-out;
   transition: all 0.25s ease-out;
 }
 
 .new-game-win:hover {
   cursor: pointer;
+  -webkit-transform: translateX(-50%) scale(1.25);
   transform: translateX(-50%) scale(1.25);
 }
 
 .new-game-win:hover .rect {
   border-radius: 20px;
+  -webkit-animation-play-state: running;
   animation-play-state: running;
 }
 
-/* .new-game-win:hover .rect-1 { */
-/* animation: spin 2s linear infinite; */
-/* } */
-
-/* .new-game-win:hover .rect-2 { */
-/* animation: spin 2s linear infinite reverse; */
-/* } */
-
 .new-game-win .rect {
+  -webkit-animation-play-state: paused;
   animation-play-state: paused;
   border-radius: 5px;
   display: block;
   height: 80px;
   width: 80px;
+  -webkit-transform-origin: center;
   transform-origin: center;
   left: 10px;
   top: 0px;
   position: absolute;
+  -webkit-transition: all 0.1s ease-out;
   transition: all 0.1s ease-out;
 }
 
 .rect-1 {
   background-color: rgba(84, 158, 29, 0.5);
+  -webkit-animation: spin 3s linear infinite;
   animation: spin 3s linear infinite;
 }
 
 .rect-2 {
   background-color: rgba(228, 163, 32, 0.8);
+  -webkit-animation: spin 3s linear infinite reverse;
   animation: spin 3s linear infinite reverse;
 }
 
@@ -503,12 +500,6 @@ i {
   display: block;
   position: absolute;
   text-align: center;
-}
-
-@-moz-keyframes spin {
-  100% {
-    -moz-transform: rotate(360deg);
-  }
 }
 
 @-webkit-keyframes spin {
@@ -554,7 +545,12 @@ i {
   width: 100vw;
   background: rgba(0, 0, 0, 0.2);
   display: none;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  -ms-grid-row-align: flex-start;
   align-items: flex-start;
   text-decoration: none;
   color: inherit;
@@ -582,6 +578,8 @@ i {
 }
 
 .lightbox-how-to-play:target {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -591,6 +589,9 @@ i {
 
 @media (max-width: 768px) {
   .header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     padding: 25px 0 18px;
   }
@@ -601,7 +602,11 @@ i {
   }
 
   .header nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     width: 100%;
   }
@@ -678,8 +683,14 @@ i {
     width: auto;
     min-width: auto;
     margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
   }
 
@@ -700,14 +711,22 @@ i {
 
   .main-commands {
     padding-top: 22px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
     flex-direction: row-reverse;
   }
 
   button {
     background-color: #e4a320;
     position: relative;
+    -webkit-transform: none;
     transform: none;
     left: 0;
     width: 140px;
@@ -731,6 +750,7 @@ i {
   .dices-container {
     top: 92px;
     left: 100%;
+    -webkit-transform: translateX(-80%) scale(0.6);
     transform: translateX(-80%) scale(0.6);
     width: auto;
   }
@@ -756,6 +776,7 @@ i {
 
 @media (max-width: 425px) {
   .dices-container {
+    -webkit-transform: translateX(-65%) scale(0.5);
     transform: translateX(-65%) scale(0.5);
   }
 }
